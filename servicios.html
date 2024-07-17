@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Electro Industrial Micabal S.A</title>
+    <link rel="shortcut icon" href="assets/images/Logo Micabal.ico" type="image/png">
+    <!-- Incluir el archivo CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f4f4f9;
+            color: #c46242;
+        }
+        #site-header {
+            background-color: #2a3770;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        #site-header .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #site-header .navbar-nav .nav-link {
+            color: #fff;
+            margin: 0 10px;
+        }
+        #site-header .navbar-nav .nav-link:hover {
+            color: #c46242;
+        }
+        .main-content {
+            padding-top: 100px;
+        }
+        .service-section {
+            padding: 60px 0;
+        }
+        .service-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .service-card h2 {
+            color: #222d5f;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        .service-card p {
+            color: #000000;
+            font-size: 1em;
+            margin: 10px 0 20px;
+        }
+        .service-card a {
+            display: inline-block;
+            color: #fff;
+            background-color: #2a3770;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .service-card a:hover {
+            background-color: #c46242;
+        }
+        .service-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #222d5f;
+            padding: 10px;
+        }
+        .dropdown-menu {
+            background-color: #2a3770;
+            border-radius: 0 0 8px 8px;
+        }
+        .dropdown-menu .dropdown-item {
+            color: #fff;
+        }
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #c46242;
+            color: #fff;
+        }
+        .gallery-section {
+            padding: 60px 0;
+        }
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery-header h1 {
+            font-size: 2.5em;
+            color: #030e42;
+        }
+        .gallery-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .gallery-column {
+            width: calc(25% - 20px);
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-column:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px 8px 0 0;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-column:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-column .info {
+            padding: 10px;
+            background: rgba(221, 99, 18, 0.945);
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-column:hover .info {
+            transform: translateY(0%);
+        }
+        @media screen and (max-width: 1024px) {
+            .gallery-column {
+                width: calc(33.33% - 20px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .gallery-column {
+                width: calc(50% - 20px);
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .gallery-column {
+                width: calc(100% - 20px);
+            }
+        }
+        .info-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h3 {
+            color: #222d5f;
+            margin-bottom: 15px;
+        }
+        .info-box p {
+            color: #000000;
+        }
+        .footer-29 {
+            background-color: #2a3770;
+            color: #fff;
+            margin-top: 50px;
+            padding: 30px 0;
+        }
+        .footer-title-29 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .footer-list-29 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-list-29 ul li {
+            margin-bottom: 10px;
+        }
+        .footer-list-29 ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer-list-29 ul li a:hover {
+            color: #eb9148;
+            text-decoration: underline;
+        }
+        .map-container {
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .footer-class-29 {
+            margin-top: 20px;
+        }
+        .highlight {
+            background-color: #fafafa;
+            border-left: 5px solid #c45308;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .highlight h2 {
+            color: #040a64;
+        }
+        .highlight p {
+            font-size: 1.1em;
+            color: #111111;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header id="site-header" class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg px-0 pt-lg-0">
+          <a class="navbar-brand" href="inicio.html"
+            ><span class="fa fa-motor"></span
+            ><strong>Electro Industrial Micabal S.A</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-lg-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="inicio.html"
+                  ><strong>Inicio</strong><span class="sr-only"></span
+                ></a>
+              </li>
+              <li class="nav-item @@nosotros__active">
+                <a class="nav-link" href="nosotros.html"
+                  ><strong>Nosotros</strong></a
+                >
+              </li>
+              <li class="nav-item @@productos__active">
+                <a class="nav-link" href="productos.html"
+                  ><strong>Productos</strong></a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <strong>Servicios</strong>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="sistemas electricos.html"
+                      >Motores Eléctricos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="sistemas electricos.html"
+                      >Sistemas Eléctricos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="generadores.html"
+                      >Generadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="turbocargadores.html"
+                      >Turbocargadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mecanica industrial.html"
+                      >Mecánica Industrial</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="metalmecanica.html"
+                      >Metalmecánica</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item @@proyectos__active">
+                <a class="nav-link" href="proyectos.html"
+                  ><strong>Proyectos</strong></a
+                >
+              </li>
+              <li class="nav-item @@contacto__active">
+                <a class="nav-link" href="contacto.html"
+                  ><strong>Contacto</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container main-content">
+      <div class="text-center">
+        <h2 class="my-5"><strong>Sección de Servicios</strong></h2>
+        <div class="highlight">
+          <h2>
+            <strong
+              >Nos es grato poner a su disposición nuestra compañía</strong
+            >
+          </h2>
+          <p>
+            La misma cuenta con más de <strong>30 años</strong> de experiencia
+            en el mercado ecuatoriano, teniendo como misión principal ser cada
+            vez más eficientes. <br />
+            Para ello, contamos con personal y equipos especializados y
+            calificados.
+          </p>
+        </div>
+      </div>
+      <!-- Servicios -->
+      <div class="row service-section">
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="assets/images/Motor.jpg"
+                alt="Ícono de Motores Eléctricos"
+              />
+            </div>
+            <h2><strong>MOTORES ELÉCTRICOS</strong></h2>
+            <p>
+              Servicios de Reparación, Rebobinado, Mantenimiento, Rediseño y
+              Pruebas de Motores AC & DC hasta 4.000 HP.
+            </p>
+            <a href="motores electricos.html">Leer más</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="assets/images/sistema electrico.png"
+                alt="Ícono de Sistemas Eléctricos"
+              />
+            </div>
+            <h2><strong>SISTEMAS ELÉCTRICOS</strong></h2>
+            <p>
+              Nuestro Equipo de Profesionales Altamente Calificados, con
+              Licencia y Electricistas Experimentados.
+            </p>
+            <a href="sistemas electricos.html">Leer más</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="assets/images/MKT_WEN_IMAGE_WIND_GENERATORS_515Wx515H.jpg"
+                alt="Sistemas electricos"
+              />
+            </div>
+            <h2><strong>GENERADORES</strong></h2>
+            <p>
+              Mantenimiento Eléctrico y Electromecánico de grupos electrógenos
+              de 10 KW hasta 4.000 KW a Diésel, Gas Natural, Gas LPG
+            </p>
+            <a href="generadores.html">Leer más</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/images/turbo.jpg" alt="Ícono de Generadores" />
+            </div>
+            <h2><strong>TURBOCARGADORES</strong></h2>
+            <p>
+              Mantenimiento Y Reparación De Turbocompresores Para Centrales
+              Térmicas Y Motores Reciprocantes.
+            </p>
+            <a href="turbocargadores.html">Leer más</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="assets/images/Servicios-Mec1__1_-removebg-preview (1).png"
+                alt="Ícono de Mecanica industrial"
+              />
+            </div>
+            <h2><strong>MECÁNICA INDUSTRIAL</strong></h2>
+            <p>
+              Servicios en Sistemas Neumaticos, Mecánicos y Electromecánicos en
+              General.
+            </p>
+            <a href="mecanica industrial.html">Leer más</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="assets/images/torno1.png"
+                alt="Ícono de Metalmecanica"
+              />
+            </div>
+            <h2><strong>METALMECÁNICA</strong></h2>
+            <p>
+              Especialistas en Diseño, Fabricación y Montaje de Piezas
+              Metálicas.
+            </p>
+            <a href="metalmecanica.html">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contenido Principal -->
+    <section class="main-content">
+      <div class="container">
+        <div class="row">
+          <!-- Segunda columna -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <img src="assets/images/image (4).png" alt="Soporte Técnico" />
+              </div>
+              <h2><strong>Soporte Técnico</strong></h2>
+              <p>
+                Contamos con soporte técnico especializado para resolver
+                eficazmente cualquier problema que pueda surgir en sus equipos.
+              </p>
+              <div class="gallery-section">
+                <div class="gallery-header">
+                  <h1><strong>Galería de Fotos</strong></h1>
+                </div>
+                <div class="gallery-row">
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery4.jpg" alt="Imagen 4" />
+                    <div class="info"></div>
+                  </div>
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery5.jpg" alt="Imagen 5" />
+                    <div class="info"></div>
+                  </div>
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery6.jpg" alt="Imagen 6" />
+                    <div class="info"></div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/0962638611?text=Solicito%20soporte%20t%C3%A9cnico"
+                >Solicitar Soporte</a
+              >
+            </div>
+          </div>
+          <!-- Tercera columna -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <img src="assets/images/image (3).png" alt="Mantenimiento" />
+              </div>
+              <h2><strong>Mantenimiento</strong></h2>
+              <p>
+                Ofrecemos servicios de mantenimiento preventivo y correctivo
+                para asegurar el óptimo funcionamiento de sus equipos.
+              </p>
+              <div class="gallery-section">
+                <div class="gallery-header">
+                  <h1><strong>Galería de Fotos</strong></h1>
+                </div>
+                <div class="gallery-row">
+                  <div class="gallery-column">
+                    <img
+                      src="assets/images/GQYFBGgXAAAneoi.jpg"
+                      alt="Imagen 7"
+                    />
+                    <div class="info"></div>
+                  </div>
+                  <div class="gallery-column">
+                    <img
+                      src="assets/images/GQYFBGhXAAAUVf8.jpg"
+                      alt="Imagen 8"
+                    />
+                    <div class="info"></div>
+                  </div>
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery9.jpg" alt="Imagen 9" />
+                    <div class="info"></div>
+                  </div>
+                </div>
+              </div>
+              <a href="catalogo mantenimiento.html">Ver Catálogo</a>
+            </div>
+          </div>
+          <!-- Quinta columna -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <img
+                  src="assets/images/image.png"
+                  alt="Fabricación de Piezas Especiales"
+                />
+              </div>
+              <h2><strong>Fabricación de Piezas Especiales</strong></h2>
+              <p>
+                Fabricación y reparación de piezas industriales según
+                especificaciones únicas de clientes.
+              </p>
+              <div class="gallery-section mt-3">
+                <!-- Agrega la clase mt-3 para un margen top -->
+                <div class="gallery-header">
+                  <h1><strong>Galería de Fotos</strong></h1>
+                </div>
+                <div class="gallery-row">
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery10.jpg" alt="Imagen 10" />
+                    <div class="info"></div>
+                  </div>
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery11.jpg" alt="Imagen 11" />
+                    <div class="info"></div>
+                  </div>
+                  <div class="gallery-column">
+                    <img src="assets/images/gallery12.jpg" alt="Imagen 12" />
+                    <div class="info"></div>
+                  </div>
+                </div>
+              </div>
+              <a href="fabricacion-piezas.html">Ver Catálogo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pie de página -->
+    <footer class="footer-29">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29">
+              <strong> Información de Contacto</strong>
+            </h3>
+            <p class="footer-text-29">
+              <strong>Dirección: </strong>Noguchi 1019 y Brasil<br />Ecuador -
+              Guayas - Guayaquil
+            </p>
+            <p class="footer-text-29">
+              <strong>Teléfono: </strong> 454-6290 / 461-3820
+            </p>
+            <p class="footer-text-29">
+              <strong>Email: </strong
+              ><a href="mailto:ventasyservicios@micabal.com">
+                ventasyservicios@micabal.com</a
+              >
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29"><strong>Enlaces Rápidos</strong></h3>
+            <div class="footer-list-29">
+              <ul>
+                <li>
+                  <a href="inicio.html"><i class="fab fa-inicio"></i> Inicio</a>
+                </li>
+                <li>
+                  <a href="nosotros.html"
+                    ><i class="fab fa-nosotros"></i> Nosotros</a
+                  >
+                </li>
+                <li>
+                  <a href="productos.html"
+                    ><i class="fab fa-productos"></i> Productos</a
+                  >
+                </li>
+                <li>
+                  <a href="servicios.html"
+                    ><i class="fab fa-servicios"></i> Servicios</a
+                  >
+                </li>
+                <li>
+                  <a href="proyectos.html"
+                    ><i class="fab fa-proyectos"></i> Proyectos</a
+                  >
+                </li>
+                <li>
+                  <a href="contacto.html"
+                    ><i class="fab fa-contacto"></i> Contacto</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29"><strong>Mapa del Sitio</strong></h3>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8691653664673!2d-79.88996112698088!3d-2.2031122373114047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6fbf115153cb%3A0x9255c0e9d9052453!2sELECTRO%20INDUSTRIAL%20MICABAL%20S.A.!5e0!3m2!1ses!2sec!4v1718241512340!5m2!1ses!2sec"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29">
+                  <strong>Horarios de Atención</strong>
+                </h3>
+                <p class="footer-text-29">
+                  <strong>Lunes a Viernes:</strong> 8:00 AM - 4:30 PM
+                </p>
+                <p class="footer-text-29">
+                  <strong>Sábados:</strong> 8:00 AM - 12:30 AM
+                </p>
+                <p class="footer-text-29"><strong>Domingos:</strong> Cerrado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-class-29 py-3">
+        <p class="text-center">
+          <strong
+            >© 2024 Electro Industrial Micabal S.A. Todos los derechos
+            reservados</strong
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

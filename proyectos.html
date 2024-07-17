@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos | Electro Industrial Micabal S.A</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/Logo Micabal.ico"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #000000;
+        padding-top: 70px; /* Ajuste para el encabezado fijo */
+      }
+
+      #site-header {
+        background-color: #2a3770;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      #site-header .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      #site-header .navbar-nav .nav-link {
+        color: #fff;
+        margin: 0 10px;
+      }
+
+      #site-header .navbar-nav .nav-link:hover {
+        color: #c46242;
+      }
+
+      .hero {
+        background: url("/Micabal/assets/images/grinding-inside-cylindrical-object.jpg")
+          no-repeat center center/cover;
+        color: #fff;
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+        z-index: 1;
+      }
+
+      .hero h1,
+      .hero p {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      .project-section {
+        padding: 50px 20px;
+        background-color: #e6eaf0;
+      }
+
+      .project-title {
+        font-size: 3em;
+        margin-bottom: 40px;
+        color: #2a3770;
+        text-align: center;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .project-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .project-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .project-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        text-align: left;
+        transition: background 0.3s;
+      }
+
+      .project-content h3 {
+        margin: 0;
+      }
+
+      .project-item {
+        animation: fadeInUp 0.5s ease-in-out forwards;
+        opacity: 0;
+      }
+
+      .project-item:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .project-item:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .footer-29 {
+        background-color: #2a3770;
+        color: #fff;
+        padding: 40px 0;
+      }
+
+      .footer-title-29 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+
+      .footer-list-29 ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-list-29 ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-list-29 ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer-list-29 ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .map-container {
+        overflow: hidden;
+        position: relative;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .footer-class-29 {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .custom-shape {
+        clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%);
+      }
+
+      .services-section {
+        padding: 50px 20px;
+        background-color: #fff;
+      }
+
+      .services-title {
+        font-size: 3em;
+        margin-bottom: 40px;
+        color: #2a3770;
+        text-align: center;
+      }
+
+      .service-item {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .service-item h3 {
+        font-size: 1.5em;
+        color: #2a3770;
+        margin-top: 20px;
+      }
+
+      .service-item img {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonials-section {
+        padding: 50px 20px;
+        background-color: #f4f4f9;
+      }
+
+      .testimonials-title {
+        font-size: 3em;
+        margin-bottom: 40px;
+        color: #2a3770;
+        text-align: center;
+      }
+
+      .testimonial-item {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .testimonial-item p {
+        font-size: 1.2em;
+        color: #333;
+      }
+
+      .testimonial-item h4 {
+        font-size: 1.5em;
+        color: #2a3770;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header id="site-header" class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg stroke px-0 pt-lg-0">
+          <h1>
+            <a class="navbar-brand" href="inicio.html"
+              ><span class="fa fa-motor"></span
+              ><strong>Electro Industrial Micabal S.A</strong></a
+            >
+          </h1>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-lg-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="inicio.html"
+                  ><strong>Inicio</strong><span class="sr-only"></span
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html"
+                  ><strong>Nosotros</strong></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="productos.html"
+                  ><strong>Productos</strong></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicios.html"
+                  ><strong>Servicios</strong></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="proyectos.html"
+                  ><strong>Proyectos</strong></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html"
+                  ><strong>Contacto</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+      <h1><strong>Bienvenidos a Proyectos Especiales</strong></h1>
+      <p>
+        En Electro Industrial Micabal S.A., nos especializamos en proyectos
+        únicos y personalizados. <br />
+        Nuestra experiencia y dedicación nos permiten ofrecer soluciones
+        innovadoras adaptadas a las necesidades específicas de cada cliente.
+      </p>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section class="project-section">
+      <h2 class="project-title">Nuestros Proyectos</h2>
+      <div class="project-grid">
+        <div class="project-item custom-shape">
+          <img src="/Micabal/assets/images/micabal4.png" alt="Proyecto 1" />
+          <div class="project-content">
+            <h3>Proyecto 1</h3>
+            <p>Descripción del proyecto 1.</p>
+          </div>
+        </div>
+        <div class="project-item custom-shape">
+          <img src="/Micabal/assets/images/BALANCEO (2).jpg" alt="Proyecto 2" />
+          <div class="project-content">
+            <h3>Proyecto 2</h3>
+            <p>Descripción del proyecto 2.</p>
+          </div>
+        </div>
+        <div class="project-item custom-shape">
+          <img
+            src="/Micabal/assets/images/promarisco ventiladores.jpg"
+            alt="Proyecto 3"
+          />
+          <div class="project-content">
+            <h3>Proyecto 3</h3>
+            <p>Descripción del proyecto 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="services-section">
+      <h2 class="services-title">Nuestros Servicios</h2>
+      <div class="row">
+        <div class="col-md-4 service-item">
+          <img
+            src="https://via.placeholder.com/300x200"
+            class="img-fluid"
+            alt="Servicio 1"
+          />
+          <h3>Servicio 1</h3>
+          <p>Descripción del servicio 1.</p>
+        </div>
+        <div class="col-md-4 service-item">
+          <img
+            src="https://via.placeholder.com/300x200"
+            class="img-fluid"
+            alt="Servicio 2"
+          />
+          <h3>Servicio 2</h3>
+          <p>Descripción del servicio 2.</p>
+        </div>
+        <div class="col-md-4 service-item">
+          <img
+            src="https://via.placeholder.com/300x200"
+            class="img-fluid"
+            alt="Servicio 3"
+          />
+          <h3>Servicio 3</h3>
+          <p>Descripción del servicio 3.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonials-section">
+      <h2 class="testimonials-title">Testimonios</h2>
+      <div class="row">
+        <div class="col-md-6 testimonial-item">
+          <p>
+            "Electro Industrial Micabal nos brindó un servicio excepcional y sus
+            proyectos son de la más alta calidad."
+          </p>
+          <h4>- Cliente 1</h4>
+        </div>
+        <div class="col-md-6 testimonial-item">
+          <p>
+            "Estoy muy satisfecho con los resultados y la profesionalidad del
+            equipo. Altamente recomendados."
+          </p>
+          <h4>- Cliente 2</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer-29">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29">
+              <strong>Información de Contacto</strong>
+            </h3>
+            <p class="footer-text-29">
+              <strong>Dirección:</strong> Noguchi 1019 y Brasil <br />
+              Ecuador - Guayas - Guayaquil
+            </p>
+            <p class="footer-text-29">
+              <strong>Teléfono:</strong> 454-6290 / 461-3820
+            </p>
+            <p class="footer-text-29">
+              <strong>Email:</strong>
+              <a href="mailto:ventasyservicios@micabal.com">
+                ventasyservicios@micabal.com</a
+              >
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29">Enlaces Rápidos</h3>
+            <div class="footer-list-29">
+              <ul>
+                <li>
+                  <a href="inicio.html"><i class="fab fa-inicio"></i> Inicio</a>
+                </li>
+                <li>
+                  <a href="nosotros.html"
+                    ><i class="fab fa-nosotros"></i> Nosotros</a
+                  >
+                </li>
+                <li>
+                  <a href="productos.html"
+                    ><i class="fab fa-productos"></i> Productos</a
+                  >
+                </li>
+                <li>
+                  <a href="servicios.html"
+                    ><i class="fab fa-servicios"></i> Servicios</a
+                  >
+                </li>
+                <li>
+                  <a href="proyectos.html"
+                    ><i class="fab fa-proyectos"></i> Proyectos</a
+                  >
+                </li>
+                <li>
+                  <a href="contacto.html"
+                    ><i class="fab fa-contacto"></i> Contacto</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29">Mapa del Sitio</h3>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8691653664673!2d-79.88996112698088!3d-2.2031122373114047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6fbf115153cb%3A0x9255c0e9d9052453!2sELECTRO%20INDUSTRIAL%20MICABAL%20S.A.!5e0!3m2!1ses!2sec!4v1718241512340!5m2!1ses!2sec"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29">Horarios de Atención</h3>
+                <p class="footer-text-29">
+                  <strong>Lunes a Viernes:</strong> 8:00 AM - 4:30 PM
+                </p>
+                <p class="footer-text-29">
+                  <strong>Sábados:</strong> 8:00 AM - 12:30 PM
+                </p>
+                <p class="footer-text-29"><strong>Domingos:</strong> Cerrado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-class-29 py-3">
+        <p class="text-center">
+          <strong
+            >© 2024 Electro Industrial Micabal S.A. Todos los derechos
+            reservados</strong
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.12.2/dist/umd/popper.min.js"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+M5YcD7I7cnZg9vUxsPC5kD4U2JZLcl1YZnfkE5f1c9S/pC"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-b4gt6iQ/tCO9l8tba1BmPiWP2y3kW1Q81aOQy08r+DzjA4c3Z9DIxCXm/IAqPz/W0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

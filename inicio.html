@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electro Industrial Micabal S.A.</title>
+    <link
+      rel="shortcut icon"
+      href="/FoodScoop/assets/images/Logo Micabal.ico"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/css/style-starter.css" />
+    <link rel="stylesheet" href="fonts/icons-linear.css" />
+    <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-responsive.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #000000;
+      }
+
+      .logo-2 {
+        display: none;
+      }
+
+      header.fixed .logo-1 {
+        display: none;
+      }
+
+      header.fixed .logo-2 {
+        display: block;
+      }
+
+      .nav-link {
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .nav-link::before,
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #e06e1c;
+        transition: width 0.3s, height 0.3s;
+      }
+
+      .nav-link::before {
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .nav-link::after {
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .nav-link:hover::before,
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link::before,
+      .nav-link::after {
+        height: 2px;
+      }
+
+      .nav-link.active::before,
+      .nav-link.active::after {
+        width: 100%;
+        height: 2px;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .fade-in-1 {
+        transition-delay: 0.1s;
+      }
+
+      .fade-in-2 {
+        transition-delay: 0.2s;
+      }
+
+      .fade-in-3 {
+        transition-delay: 0.3s;
+      }
+
+      .fade-in-4 {
+        transition-delay: 0.4s;
+      }
+
+      .authorized-section .container {
+        max-width: 1100px;
+      }
+
+      .authorized-section .col-lg-4,
+      .authorized-section .col-lg-8 {
+        display: flex;
+        align-items: center;
+      }
+
+      .authorized-section h3 {
+        margin-bottom: 1rem;
+      }
+
+      .authorized-section p {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+
+      .authorized-section img {
+        margin-bottom: 1rem;
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+      }
+
+      .authorized-section img:hover {
+        transform: scale(1.1);
+      }
+
+      .custom-border {
+        border: 2px solid #e06e1c;
+        border-radius: 5px;
+        padding: 15px;
+      }
+
+      .img-container {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .img-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .img-container:hover::before {
+        opacity: 0.2;
+      }
+
+      .img-container:hover img {
+        transform: scale(1.1) translateY(-5px);
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+      }
+
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      .mobile-nav ul li {
+        margin: 20px 0;
+      }
+
+      .mobile-nav ul li a {
+        color: #fff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .mobile-nav ul li a:hover {
+        color: #e06e1c;
+      }
+
+      .hamburger.active div:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active div:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active div:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      @media (max-width: 768px) {
+        .header_default {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .header_default .site-branding {
+          margin-bottom: 10px;
+        }
+
+        .headermenu ul {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .banner-info-bg h5 {
+          font-size: 1.5rem;
+        }
+
+        .banner-info-bg p {
+          font-size: 1rem;
+        }
+
+        .slider-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .banner-info {
+          padding: 10px;
+        }
+
+        .banner-info-bg h5 {
+          font-size: 1.2rem;
+        }
+
+        .banner-info-bg p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body id="home">
+    <header>
+      <div class="container psr">
+        <div
+          class="header_default d-flex justify-content-between align-items-center"
+        >
+          <div class="site-branding">
+            <!-- Logo principal -->
+            <a href="index.html" class="logo">
+              <img
+                src="/Micabal/assets/images/image (1).png"
+                alt="Logo Micabal"
+                class="logo-1"
+              />
+            </a>
+            <!-- Logo adicional -->
+            <a href="index.html" class="logo">
+              <img
+                src="/Micabal/assets/images/logo micabal original.png"
+                alt="Segundo Logo"
+                class="logo-2"
+              />
+            </a>
+          </div>
+          <div class="sitenav" id="sitenav">
+            <nav class="headermenu leftmenu" id="headnav" role="navigation">
+              <ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="inicio.html"
+                    ><strong>Inicio</strong></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="nosotros.html"
+                    ><strong>Nosotros</strong></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="productos.html"
+                    ><strong>Productos</strong></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="servicios.html"
+                    ><strong>Servicios</strong></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="proyectos.html"
+                    ><strong>Proyectos</strong></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacto.html"
+                    ><strong>Contacto</strong></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-nav">
+      <ul>
+        <li>
+          <a href="inicio.html"><strong>Inicio</strong></a>
+        </li>
+        <li>
+          <a href="nosotros.html"><strong>Nosotros</strong></a>
+        </li>
+        <li>
+          <a href="productos.html"><strong>Productos</strong></a>
+        </li>
+        <li>
+          <a href="servicios.html"><strong>Servicios</strong></a>
+        </li>
+        <li>
+          <a href="proyectos.html"><strong>Proyectos</strong></a>
+        </li>
+        <li>
+          <a href="contacto.html"><strong>Contacto</strong></a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("fixed");
+        } else {
+          header.classList.remove("fixed");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            navLinks.forEach((nav) => nav.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+
+        const hamburger = document.querySelector(".hamburger");
+        const mobileNav = document.querySelector(".mobile-nav");
+
+        hamburger.addEventListener("click", function () {
+          this.classList.toggle("active");
+          mobileNav.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <!-- main-slider -->
+    <section class="w3l-main-slider" id="home">
+      <div class="companies20-content">
+        <div class="owl-one owl-carousel owl-theme">
+          <div class="item">
+            <div class="slider-info banner-view bg bg2">
+              <div class="banner-info">
+                <div class="container">
+                  <div class="banner-info-bg">
+                    <h5><strong>Ingeniería a su servicio</strong></h5>
+                    <p class="mt-4">
+                      Disponemos de un área de 460 m2 para bodegas y de 1,500 m2
+                      para nuestros talleres y oficinas, hemos expandido
+                      nuestros servicios con un nuevo área de CNC. Gracias a
+                      nuestro profesionalismo, ganamos la confianza de nuestros
+                      clientes, ofreciendo soluciones precisas y personalizadas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="slider-info banner-view banner-top1 bg bg2">
+              <div class="banner-info">
+                <div class="container">
+                  <div class="banner-info-bg">
+                    <h5><strong>Asistencia Técnica</strong></h5>
+                    <p class="mt-4">
+                      Explora nuestra colección visual de proyectos completados
+                      y descubre cómo ofrecemos soporte técnico integral para
+                      empresas electroindustriales.
+                    </p>
+                    <a
+                      class="btn btn-style btn-primary mt-sm-5 mt-4"
+                      href="servicios.html"
+                      >Revisar</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="slider-info banner-view banner-top2 bg bg2">
+              <div class="banner-info">
+                <div class="container">
+                  <div class="banner-info-bg">
+                    <h5><strong>Ventas</strong></h5>
+                    <p class="mt-4">
+                      Representamos marcas de renombre internacional como WEG,
+                      siendo su Servicio Autorizado y Distribuidor en Ecuador,
+                      garantizando productos y servicios de calidad superior.
+                    </p>
+                    <a
+                      class="btn btn-style btn-primary mt-sm-5 mt-4"
+                      href="productos.html"
+                      >Revisar</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="slider-info banner-view banner-top4 bg bg2">
+              <div class="banner-info">
+                <div class="container">
+                  <div class="banner-info-bg">
+                    <h5><strong>Noticias</strong></h5>
+                    <p class="mt-4">
+                      <strong>RESOLUCION MERCADO DE VALORES</strong> <br />
+                      Resolución No. SCVS-INMV-DNAR-2018-00003253
+                    </p>
+                    <a
+                      class="btn btn-style btn-secondary mt-sm-5 mt-4"
+                      href="assets/Resolucion_MICABAL.pdf"
+                      target="_blank"
+                      >Ver Manual</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="slider-info banner-view banner-top3 bg bg2">
+              <div class="banner-info">
+                <div class="container">
+                  <div class="banner-info-bg">
+                    <h5>Somos Líderes</h5>
+                    <p class="mt-4">
+                      En nuestro trabajo utilizamos productos de primera
+                      calidad, garantizando así la calidad de nuestro servicio.
+                      Adicionalmente, proveemos repuestos para equipos
+                      electrónicos, generadores y motores a diesel en el menor
+                      tiempo posible. Esperando superar las expectativas de
+                      servicio de nuestros clientes y establecer nuevos
+                      parámetros de calidad y atención, ofrecemos nuestra
+                      <strong>"INGENIERÍA A SU SERVICIO”</strong> para órdenes
+                      de trabajo programadas o de emergencia. Además contamos
+                      con la calificación de la empresa multinacional Coface
+                      Services Ecuador, como proveedores de prestigiosas
+                      empresas. Somos también miembros de la EASA
+                      <strong
+                        >(Electrical Apparatus Service Association).</strong
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-choose-us" class="py-5">
+      <div class="container py-lg-5 py-md-4 py-2">
+        <div class="row align-items-center">
+          <!-- Columna izquierda con el título y el texto principal -->
+          <section
+            id="why-choose-us"
+            class="py-5"
+            style="background-color: #f8f9fa"
+          >
+            <div class="container py-lg-5 py-md-4 py-2">
+              <div class="row align-items-center">
+                <!-- Columna izquierda con el título y el texto principal -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                  <h2 class="mb-3 text-primary">
+                    <strong>¿Por qué elegirnos?</strong>
+                  </h2>
+                  <p class="mb-4">
+                    Electro Industrial Micabal es una empresa líder en
+                    ingeniería electro industrial, especializada en proporcionar
+                    soluciones innovadoras y de alta calidad para diversas
+                    industrias.
+                  </p>
+                  <div class="mb-4 custom-border">
+                    <ul class="list-unstyled">
+                      <li>
+                        <i class="fas fa-check-circle text-warning"></i>
+                        Utilizar productos de primera calidad que garantizan la
+                        fiabilidad y durabilidad de nuestros servicios.
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle text-warning"></i> Ofrecer
+                        un servicio técnico especializado y personalizado que
+                        satisfaga las necesidades específicas de cada cliente.
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle text-warning"></i>
+                        Mantener altos estándares éticos y profesionales en
+                        todas nuestras operaciones.
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle text-warning"></i>
+                        Proporcionar un soporte técnico integral antes, durante
+                        y después de la implementación de nuestros productos y
+                        soluciones.
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle text-warning"></i>
+                        Garantizar la máxima satisfacción del cliente mediante
+                        una atención al cliente eficiente y amigable.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Columna derecha con la imagen -->
+                <div class="col-lg-6 text-center">
+                  <img
+                    src="/Micabal/assets/images/por que elegirnos.png"
+                    alt="Motores Eléctricos"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- /features -->
+    <section class="w3l-features-8" id="products">
+      <div class="features py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+          <h5 class="title-small text-center">
+            <strong>Somos Especialistas</strong>
+          </h5>
+          <h3 class="title-big text-center mb-md-5 mb-4"></h3>
+          <div class="fea-gd-vv text-center row">
+            <!-- Sección de servicios -->
+            <div class="services">
+              <div class="service">
+                <h3><strong>Proyectos Personalizados</strong></h3>
+                <p>
+                  Galería de proyectos destacados diseñados y ejecutados para
+                  diversas industrias.
+                </p>
+              </div>
+              <div class="service">
+                <h3><strong>Generadores de Energía</strong></h3>
+                <p>
+                  Suministro confiable y eficiente para tus necesidades
+                  energéticas.
+                </p>
+              </div>
+              <div class="service">
+                <h3><strong>Motores de Alto Rendimiento</strong></h3>
+                <p>
+                  Soluciones industriales que cumplen las demandas más
+                  exigentes.
+                </p>
+              </div>
+              <div class="service">
+                <h3><strong>Ingeniería Mecánica</strong></h3>
+                <p>
+                  Optimización de procesos industriales desde fabricación hasta
+                  mantenimiento.
+                </p>
+              </div>
+              <div class="service">
+                <h3><strong>Turbocargadores de Alto Rendimiento</strong></h3>
+                <p>
+                  Ideal para aplicaciones industriales que requieren potencia y
+                  eficiencia.
+                </p>
+              </div>
+              <div class="service">
+                <h3><strong>Metalmecánica Precisa</strong></h3>
+                <p>Artesanía y tecnología CNC para componentes de calidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /main-slider -->
+    <section class="authorized-section py-5" id="who">
+      <div class="container py-lg-5 py-md-4 py-2">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <span class="title-small mb-2"
+              ><strong>Somos Servicio</strong></span
+            >
+            <h3 class="title-big mx-0"><strong>Técnico Autorizado</strong></h3>
+            <p class="mt-lg-4 mt-3">
+              De marcas líderes como
+              <strong>WEG, WILO, ABS, y MOTORS US.</strong><br />Confía en
+              nosotros para garantizar productos y servicios de calidad
+              respaldados por las principales empresas del sector.
+            </p>
+          </div>
+          <div class="col-lg-12">
+            <div class="logo-slider">
+              <div>
+                <img
+                  src="assets/images/abs.png"
+                  alt="ABS"
+                  class="img-fluid radius-image"
+                  style="max-height: 150px"
+                />
+              </div>
+              <div>
+                <img
+                  src="assets/images/weg.png"
+                  alt="WEG"
+                  class="img-fluid radius-image"
+                  style="max-height: 150px"
+                />
+              </div>
+              <div>
+                <img
+                  src="assets/images/Wilo.png"
+                  alt="Wilo"
+                  class="img-fluid radius-image"
+                  style="max-height: 150px"
+                />
+              </div>
+              <div>
+                <img
+                  src="assets/images/Motor_Us.png"
+                  alt="Motors US"
+                  class="img-fluid radius-image"
+                  style="max-height: 150px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-29">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29">
+              <strong>Información de Contacto</strong>
+            </h3>
+            <p class="footer-text-29">
+              <strong>Dirección: </strong>Noguchi 1019 y Brasil<br />Ecuador -
+              Guayas - Guayaquil
+            </p>
+            <p class="footer-text-29">
+              <strong>Teléfono: </strong> 454-6290 / 461-3820
+            </p>
+            <p class="footer-text-29">
+              <strong>Email: </strong
+              ><a href="mailto:ventasyservicios@micabal.com">
+                ventasyservicios@micabal.com</a
+              >
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29">Enlaces Rápidos</h3>
+            <div class="footer-list-29">
+              <ul>
+                <li>
+                  <a href="inicio.html"><i class="fab fa-inicio"></i> Inicio</a>
+                </li>
+                <li>
+                  <a href="nosotros.html"
+                    ><i class="fab fa-nosotros"></i> Nosotros</a
+                  >
+                </li>
+                <li>
+                  <a href="productos.html"
+                    ><i class="fab fa-productos"></i> Productos</a
+                  >
+                </li>
+                <li>
+                  <a href="servicios.html"
+                    ><i class="fab fa-servicios"></i> Servicios</a
+                  >
+                </li>
+                <li>
+                  <a href="proyectos.html"
+                    ><i class="fab fa-proyectos"></i> Proyectos</a
+                  >
+                </li>
+                <li>
+                  <a href="contacto.html"
+                    ><i class="fab fa-contacto"></i> Contacto</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29">Mapa del Sitio</h3>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8691653664673!2d-79.88996112698088!3d-2.2031122373114047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6fbf115153cb%3A0x9255c0e9d9052453!2sELECTRO%20INDUSTRIAL%20MICABAL%20S.A.!5e0!3m2!1ses!2sec!4v1718241512340!5m2!1ses!2sec"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29">Horarios de Atención</h3>
+                <p class="footer-text-29">
+                  <strong>Lunes a Viernes:</strong> 8:00 AM - 4:30 PM
+                </p>
+                <p class="footer-text-29">
+                  <strong>Sábados:</strong> 8:00 AM - 12:30 AM
+                </p>
+                <p class="footer-text-29"><strong>Domingos:</strong> Cerrado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-class-29 py-3">
+        <p class="text-center">
+          <strong
+            >© 2024 Electro Industrial Micabal S.A. Todos los derechos
+            reservados</strong
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.12.2/dist/umd/popper.min.js"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+M5YcD7I7cnZg9vUxsPC5kD4U2JZLcl1YZnfkE5f1c9S/pC"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-b4gt6iQ/tCO9l8tba1BmPiWP2y3kW1Q81aOQy08r+DzjA4c3Z9DIxCXm/IAqPz/W0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/theme-change.js"></script>
+    <script src="assets/js/custom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var owl = $(".owl-one");
+        owl.owlCarousel({
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          dots: true,
+          nav: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 1,
+            },
+            1000: {
+              items: 1,
+            },
+          },
+        });
+
+        $(".logo-slider").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          arrows: false,
+          dots: false,
+          pauseOnHover: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("fixed");
+        } else {
+          header.classList.remove("fixed");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            navLinks.forEach((nav) => nav.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+
+        const hamburger = document.querySelector(".hamburger");
+        const mobileNav = document.querySelector(".mobile-nav");
+
+        hamburger.addEventListener("click", function () {
+          this.classList.toggle("active");
+          mobileNav.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

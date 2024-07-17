@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos | Electro Industrial Micabal S.A</title>
+  <link rel="shortcut icon" href="assets/images/Logo Micabal.ico" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Estilos de la página -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f2f2f2;
+      color: #303030;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #000000;
+      }
+      #site-header {
+        background-color: #2a3770;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      #site-header .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      #site-header .navbar-nav .nav-link {
+        color: #fff;
+        margin: 0 10px;
+      }
+      #site-header .navbar-nav .nav-link:hover {
+        color: #c46242;
+      }
+    .header {
+      background-color: #ffffff;
+      color: #000000;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 100px; /* Ajusta este valor según sea necesario */
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 40px; /* Añadido para evitar que el contenido sea tapado por el header */
+    }
+
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product .info {
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    .product img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #000000;
+    }
+
+    .product p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: rgb(0, 0, 0)
+    }
+
+    .product .btn {
+      padding: 12px 24px;
+      background-color: #0a3d62;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .product .btn:hover {
+      background-color: #0a3d62;
+    }
+    .list-unstyled {
+    font-size: 0.8em; /* Reduce el tamaño de la fuente */
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.list-unstyled li {
+  margin-bottom: 10px; /* Agrega un margen entre los elementos de la lista */
+}
+
+    @media screen and (max-width: 768px) {
+      .product {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .product img {
+        margin-bottom: 20px;
+      }
+    }
+    .custom.btn.color {
+      background-color: #2a3770;
+      color:#ffffff;
+      border-color: #2a3770;
+    }
+    /* Pie de página */
+    .footer-29 {
+      background-color: #2a3770;
+      color: #fff;
+    }
+
+    .footer-title-29 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer-list-29 ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .footer-list-29 ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-list-29 ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-list-29 ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .map-container {
+      overflow: hidden;
+      position: relative;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .footer-class-29 {
+      margin-top: 20px;
+      font-size: 14px;
+      
+    }
+    @media screen and (max-width: 768px) {
+      .product {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .product img {
+        margin-bottom: 20px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg stroke px-0 pt-lg-0">
+        <h1>
+          <a class="navbar-brand" href="inicio.html">
+            <span class="fa fa-motor"></span
+            ><strong>Electro Industrial Micabal S.A</strong>
+          </a>
+        </h1>
+        <!-- Menú de navegación -->
+   <!-- Botón  para pantallas pequeñas -->
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Menú de navegación -->
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mx-lg-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="inicio.html"
+          ><strong>Inicio</strong><span class="sr-only"></span
+        ></a>
+      </li>
+      <li class="nav-item @@nosotros__active">
+        <a class="nav-link" href="nosotros.html"
+          ><strong>Nosotros</strong></a
+        >
+      </li>
+      <li class="nav-item @@productos__active">
+        <a class="nav-link" href="productos.html"
+          ><strong>Productos</strong></a
+        >
+      </li>
+      <li class="nav-item @@servicios__active">
+        <a class="nav-link" href="servicios.html"
+          ><strong>Servicios</strong></a
+        >
+      </li>
+      <li class="nav-item @@proyectos__active">
+        <a class="nav-link" href="proyectos.html"
+          ><strong>Proyectos</strong></a
+        >
+      </li>
+      <li class="nav-item @@contacto__active">
+        <a class="nav-link" href="contacto.html"
+          ><strong>Contacto</strong></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+</header>
+  <!-- Encabezado de la sección Ventas -->
+  <header class="header">
+    <img src="assets/images/WEG_LOGO.gif" alt="WEG Logo" style="width: 50px; height: 50px;"/>
+    <p>
+      <STRONG>Confía en nosotros para ser Servicio Autorizado y Distribuidor en
+        Ecuador.</STRONG>
+    </p>
+  </header>
+  <!-- Contenido principal -->
+  <div class="main-content product-row">
+    <!-- Producto 1 -->
+    <div class="product product-col">
+      <img src="assets/images/Variador de frecuencia.png" alt="Producto 1" />
+      <div class="info">
+        <h2><strong>Variadores de Frecuencia</strong></h2>
+        <p>
+          Un variador de frecuencia ajusta la velocidad de motores eléctricos para optimizar el consumo de energía. Ofrecemos tres modelos para diversas aplicaciones industriales:
+          <li>CFW11</li>
+          <li>CFW900</li>
+          <li>CFW500</li>
+        </p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto1">
+          Ver Detalles
+        </button>
+      </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="product product-col">
+      <img src="assets/images/weg-ssw.png" alt="Producto 2" />
+      <div class="info">
+        <h2><strong>Arrancadores</strong></h2>
+        <p>
+          Los arrancadores eléctricos facilitan el encendido suave y seguro de motores industriales. Contamos con tres modelos adaptados para diferentes capacidades y necesidades.</p>
+          <li>SSW08</li>
+          <li>SSW900</li>
+          <li>SSW700</li>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto2">
+          Ver Detalles
+        </button>
+      </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="product product-col">
+      <img src="assets/images/motor weg azul.jpg" alt="Producto 3" />
+      <div class="info">
+        <h2><strong>Motores Eléctricos</strong></h2>
+        <p>
+            Motoriza tus proyectos con nuestra selección de motores eléctricos eficientes y duraderos.
+
+
+        </p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto3">
+          Ver Detalles
+        </button>
+      </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product product-col">
+      <img src="assets/images/MKT_WEN_IMAGE_WIND_GENERATORS_515Wx515H.jpg" alt="Producto 4" />
+      <div class="info">
+        <h2><strong>Generadores</strong></h2>
+        <p>
+            Garantiza el suministro eléctrico con nuestros generadores potentes y confiables.
+        </p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto4">
+          Ver Detalles
+        </button>
+      </div>
+    </div>
+
+     <!-- Producto 5 -->
+     <div class="product product-col">
+        <img src="assets/images/tablero electrico.png" alt="Producto 5" />
+        <div class="info">
+          <h2><strong>Tableros Eléctricos</strong></h2>
+          <p>
+            Nuestros tableros eléctricos son la solución perfecta para controlar y monitorear su sistema eléctrico de manera eficiente.
+          </p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto5">
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+
+  
+    <!-- Producto 6 -->
+    <div class="product product-col">
+        <img src="assets/images/repuestos y accesorios.jpg" alt="Producto 6" />
+        <div class="info">
+          <h2><strong>Repuestos y Accesorios</strong></h2>
+          <p>
+            Nuestra amplia gama de repuestos y accesorios está diseñada para asegurar que su equipo siga funcionando sin interrupciones.          </p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto6">
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+
+  <!-- Modales de productos -->
+
+ <!-- Producto 1 - Modal -->
+<div class="modal fade" id="modalProducto1" tabindex="-1" aria-labelledby="modalProducto1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalProducto1Label"><strong>Variadores de Frecuencia</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>CFW11</strong></p>
+        <li>Tensión de alimentación 200-690V  monofásica o trifásica</li>
+        <li>Corrientes nominales de salida 3,6 a 1,141 A (2 a 950 cv)</li>
+        <li>Control vectorial (sensorless o con encoder) y WMagnet, VVW</li>
+        <br>
+          <img src="assets/images/MKT_WDC_INVERTERCFW11_515Wx515H.jpg" alt="Producto 1" class="img-fluid mb-3" />
+        <p><strong>CFW900</strong></p>
+        <li>Tensión de alimentación 200-240 V, 380-480V</li>
+        <li>Corriente Nominal de salida 2,8 A a 242 A (1,5 cv/1,1 kW a 200cv/132kW)</li>
+        <li>SoftPLC con software de programacion WPS gratuito</li>
+        <li>Funciones de seguridad STO y SS1 y gestion termica inteligente integrtada al producto estandar</li>
+        <li>Conectividad con Bluetooth y protocolo MQTT en el producto standar</li>
+        <li>Versiones con grado de proteccion IP20 o IP21</li>
+        <li>Control de motor PM</li>
+        <img src="assets/images/CFW900.jpg" alt="Producto 1" class="img-fluid mb-3" />
+        <br>
+        <p><strong>CFW500</strong></p>
+        <li>Tensión de alimentación 200-240 V, 380-480V</li>
+        <li>Corriente Nominal de salida 2,8 A a 242 A (1,5 cv/1,1 kW a 200cv/132kW)</li>
+        <li>SoftPLC con software de programacion WPS gratuito</li>
+        <li>Funciones de seguridad STO y SS1 y gestion termica inteligente integrtada al producto estandar</li>
+        <li>Conectividad con Bluetooth y protocolo MQTT en el producto standar</li>
+        <li>Versdiones con grado de proteccion IP20 o IP21</li>
+        <li>Control de motor PM</li>
+      </div>
+      <img src="assets/images/GLOBAL_WDC_INVERTER_CFW500_1200Wx1200H.jpg" alt="Producto 1" class="img-fluid mb-3" />
+      <div class="modal-footer">
+        <a href="https://wa.me/593996516967?text=Buenas%20tardes,%20me%20dirijo%20hacia%20usted%20para%20hacer%20la%20cotizaci%C3%B3n%20de%20Repuestos%20y%20Accesorios%20para%20Grupos%20Electrógenos" target="_blank" class="btn btn-primary" style="background-color: #222d5f; color: #FFFFFF;">Cotizar</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Producto 2 - Modal -->
+<div class="modal fade" id="modalProducto2" tabindex="-1" aria-labelledby="modalProducto2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalProducto2Label"><strong>Arrancadores</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/WDC_Soft-Starters_SSW08_515Wx515H.jpg" alt="Producto 2" class="img-fluid mb-3">
+       <strong>SSW08</strong>
+        <li>Tensión de alimentación 220 a 575V</li>
+        <li>Corriente nominal de salida 17 a 412 A</li>
+        <li>Bypass incorporado</li>
+        <li>Control de 2 fases</li>
+        <li>Protecciones del motor incorporadas</li>
+      </div>
+      <br>
+      <div class="modal-body">
+        <img src="assets/images/WDC_Soft-Starters_SSW900_515Wx515H.jpg" alt="Producto 2" class="img-fluid mb-3">
+       <strong>SSW900</strong>
+        <li>Tensión de alimentación 220 a 575V</li>
+        <li>Corriente nominal de salida 17 a 412 A</li>
+        <li>Bypass incorporado</li>
+        <li>Control de 2 fases</li>
+        <li>Protecciones del motor incorporadas</li>
+      </div>
+      <br>
+      <div class="modal-body">
+        <img src="assets/images/WDC_Soft_Starters_SSW7000_1200Wx1200H.jpg" alt="Producto 2" class="img-fluid mb-3">
+       <strong>SSW700</strong>
+        <li>Aplicable a motores de induccion de media tension de 2,3 a 13,8kV</li>
+        <li>Maximo motor aplicable de 500 cv  (375 kW) a 16.300 cv (12.200kW)</li>
+        <li>Control de torque desarrollado por WEG, basado en el control de torque de los convertidores de frecuencia</li>
+        <li>Contactores o distyuntores principal y bypass a vacio</li>
+      </div>
+      <br>
+      
+      <div class="modal-footer">
+        <a href="https://wa.me/593996516967?text=Buenas%20tardes,%20me%20dirijo%20hacia%20usted%20para%20hacer%20la%20cotizaci%C3%B3n%20de%20Repuestos%20y%20Accesorios%20para%20Grupos%20Electrógenos" target="_blank" class="btn btn-primary" style="background-color: #222d5f; color: #FFFFFF;">Cotizar</a>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Producto 3 - Modal -->
+  <div class="modal fade" id="modalProducto3" tabindex="-1" aria-labelledby="modalProducto3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalProducto3Label"><strong>Motores Eléctricos</strong></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="assets/images/Motores W22.jpg" alt="Producto 3" class="img-fluid mb-3" />
+          <p>
+            Ideal para bombas de acoplamiento directo, la nueva línea JP - W22 IE2 trae todos los conceptos y beneficios de la nueva plataforma de motores W22 aliados a los más altos niveles de eficiencia disponibles actualmente. <br>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://wa.me/593996516967?text=Buenas%20tardes,%20me%20dirijo%20hacia%20usted%20para%20hacer%20la%20cotizaci%C3%B3n%20de%20Repuestos%20y%20Accesorios%20para%20Grupos%20Electrógenos" target="_blank" class="btn btn-primary" style="background-color: #222d5f; color: #FFFFFF;">Cotizar</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Producto 4 - Modal -->
+  <div class="modal fade" id="modalProducto4" tabindex="-1" aria-labelledby="modalProducto3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalProducto4Label"><strong>Generadores</strong></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="assets/images/generador weg.jpg" alt="Producto 4" class="img-fluid mb-3" />
+          <p>
+            WEG presenta una línea completa de generadores para las más diversas aplicaciones, desde las más simples hasta las más dedicadas, en diferentes ambientes.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://wa.me/593996516967?text=Buenas%20tardes,%20me%20dirijo%20hacia%20usted%20para%20hacer%20la%20cotizaci%C3%B3n%20de%20Repuestos%20y%20Accesorios%20para%20Grupos%20Electrógenos" target="_blank" class="btn btn-primary" style="background-color: #222d5f; color: #FFFFFF;">Cotizar</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+ <!-- Producto 5 - Modal -->
+ <div class="modal fade" id="modalProducto5" tabindex="-1" aria-labelledby="modalProducto3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalProducto5Label"><strong>Tableros Eléctricos </strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/tablero electrcio e.jpg" alt="Producto 5" class="img-fluid mb-3" />
+        <ul class="list-unstyled">
+        <p>
+          <strong>Tableros de Transferencia Automática de Energía</strong><br>
+Controles para Transferencia y Re-Transferencia de Energía. <br>
+Tableros de Transferencia de energía entre RED-GENERADOR. <br>
+Tableros de transferencia de energía entre GENERADOR-GENERADOR. <br>
+Tableros de transferencia de energía asociado al sistema contra incendio.
+<br> <br>
+<strong>Tableros Eléctricos de Distribución</strong> <br>
+Tableros eléctricos de distribución en baja tensión 208V-230V/440V-480V. <br> 
+Tablero para control y compensación de KVAR. <br>
+Tableros arrancadores directos y suaves para motores eléctricos en baja tensión 208V-230V/440V-480V y en media tensión 13.2KV-34KV. <br>
+Tableros variadores de velocidad en baja tensión 208V-230V/440V-480V y en media tensión 13.2KV-34KV.
+</p>
+<strong>Tableros Eléctricos Especiales</strong><br>
+Tableros y Switchgear de sincronismo para grupos electrogenos y turbogeneradores en baja tensión208V-230V/440V-480V y en media tensión 13.2KV-34KV normalizados.<br>
+
+Tableros y Switchgear para centros de control de motores(CCM) en baja tensión 208V-230V/440V-480V y en media tensión 13.2KV-34KV. <br>
+
+Tableros cargadores de baterías. <br>
+
+Tableros de control y automatización industrial(PLC). <br>
+<br> <br>
+</div>
+<div class="modal-footer">
+  <a href="https://wa.me/593996516967?text=Buenas%20tardes,%20me%20dirijo%20hacia%20usted%20para%20hacer%20la%20cotizaci%C3%B3n%20de%20Repuestos%20y%20Accesorios%20para%20Grupos%20Electrógenos" target="_blank" class="btn btn-primary" style="background-color: #222d5f; color: #FFFFFF;">Cotizar</a>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Producto 6 - Modal -->
+<div class="modal fade" id="modalProducto6" tabindex="-1" aria-labelledby="modalProducto6Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalProducto6Label"><strong>Repuestos y Accesorios para Grupos Electrógenos</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/Repuestos y Accesorios.png" alt="Producto 6" class="img-fluid mb-3" />
+        <ul class="list-unstyled">
+          <li>Módulos digitales de control para generador y motor.</li>
+          <li>Tableros de control monitoreo y protección de generadores.</li>
+          <li>Tarjetas reguladoras de voltaje / gobernadoras de velocidad en N marcas.</li>
+          <li>Solenoides de arranque y parada / Precalentadores de Motor.</li>
+          <li>Sensores / Switchs de presión, temperatura y nivel de refrigerante.</li>
+          <li>Motores de arranque eléctricos / neumáticos.</li>
+          <li>Alternadores de carga DC.</li>
+          <li>Sistemas de carga de baterías.</li>
+          <li>Provisión de alternadores AC de hasta 2.000KW.</li>
+          <li>Provisión de diodos y puentes rectificadores para sistemas de excitación de generadores.</li>
+          <li>Gobernadoras de Velocidad y Accesorios / Actuadores de Gobernación.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="https://wa.me/593996516967?text=Buenas%20tardes,%20me%20dirijo%20hacia%20usted%20para%20hacer%20la%20cotizaci%C3%B3n%20de%20Repuestos%20y%20Accesorios%20para%20Grupos%20Electrógenos" target="_blank" class="btn btn-primary" style="background-color: #222d5f; color: #FFFFFF;">Cotizar</a>
+    </div>
+    </div></div>
+  </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Pie de página -->
+  <footer class="footer-29">
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <h3 class="footer-title-29">
+            Información de Contacto</h3>
+          <p class="footer-text-29">
+            <strong>Dirección: </strong>Noguchi 1019 y Brasil<br />Ecuador -
+            Guayas - Guayaquil
+          </p>
+          <p class="footer-text-29">
+            <strong>Teléfono: </strong> 454-6290 / 461-3820
+          </p>
+          <p class="footer-text-29">
+            <strong>Email: </strong
+            ><a href="mailto:ventasyservicios@micabal.com">
+              ventasyservicios@micabal.com</a
+            >
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <h3 class="footer-title-29">Enlaces Rápidos</h3>
+          <div class="footer-list-29">
+            <ul>
+              <li>
+                <a href="inicio.html"><i class="fab fa-inicio"></i> Inicio</a>
+              </li>
+              <li>
+                <a href="nosotros.html"
+                  ><i class="fab fa-nosotros"></i> Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="productos.html"
+                  ><i class="fab fa-productos"></i> Productos</a
+                >
+              </li>
+              <li>
+                <a href="servicios.html"
+                  ><i class="fab fa-servicios"></i> Servicios</a
+                >
+              </li>
+              <li>
+                <a href="proyectos.html"
+                  ><i class="fab fa-proyectos"></i> Proyectos</a
+                >
+              </li>
+              <li>
+                <a href="contacto.html"
+                  ><i class="fab fa-contacto"></i> Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <h3 class="footer-title-29">Mapa del Sitio</h3>
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8691653664673!2d-79.88996112698088!3d-2.2031122373114047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6fbf115153cb%3A0x9255c0e9d9052453!2sELECTRO%20INDUSTRIAL%20MICABAL%20S.A.!5e0!3m2!1ses!2sec!4v1718241512340!5m2!1ses!2sec"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h3 class="footer-title-29">Horarios de Atención</h3>
+              <p class="footer-text-29">
+                <strong>Lunes a Viernes:</strong> 8:00 AM - 4:30 PM
+              </p>
+              <p class="footer-text-29">
+                <strong>Sábados:</strong> 8:00 AM - 12:30 AM
+              </p>
+              <p class="footer-text-29"><strong>Domingos:</strong> Cerrado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-class-29 py-3">
+      <p class="text-center">
+        <strong
+          >© 2024 Electro Industrial Micabal S.A. Todos los derechos
+          reservados</strong
+        >
+      </p>
+    </div>
+  </footer>
+  <!-- Scripts de Bootstrap y jQuery necesarios -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.12.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script>
+    // Para evitar conflictos entre jQuery y Bootstrap
+    jQuery.noConflict();
+  </script>
+</body>
+</html>

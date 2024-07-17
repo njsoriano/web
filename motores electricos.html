@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motores Eléctricos | Electro Industrial Micabal S.A</title>
+    <link rel="shortcut icon" href="assets/images/Logo Micabal.ico" type="image/png" />
+    <!-- Incluir el archivo CSS de Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #a2a2a2, #04088b);
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+        margin-top: 70px;
+      }
+
+      .header h1 {
+        font-size: 3em;
+        margin: 0;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .header p {
+        font-size: 1.3em;
+        margin: 10px 0;
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      .section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .section h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        animation: slideIn 2s ease-in-out;
+      }
+
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .service-item {
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: left;
+        flex: 1 0 30%;
+        max-width: 30%;
+        animation: fadeInUp 2s ease-in-out;
+      }
+
+      .service-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .service-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-item h3 {
+        color: #04088b;
+        margin-top: 10px;
+        animation: zoomIn 1s ease-in-out;
+      }
+
+      .service-item p {
+        margin: 10px 0;
+      }
+
+      .footer-29 {
+        background-color: #2a3770;
+        color: #fff;
+        padding: 40px 0;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .footer-title-29 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+
+      .footer-list-29 ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-list-29 ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-list-29 ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer-list-29 ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .map-container {
+        overflow: hidden;
+        position: relative;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .footer-class-29 {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      #site-header {
+        background-color: #2a3770;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        border-bottom: 3px solid #bb5511;
+      }
+
+      #site-header .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      #site-header .navbar-nav .nav-link {
+        color: #fff;
+        margin: 0 10px;
+      }
+
+      #site-header .navbar-nav .nav-link:hover {
+        color: #c46242;
+      }
+
+      .img-grid {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .img-grid img {
+        flex: 1;
+        max-width: 48%;
+        border-radius: 5px;
+      }
+
+      .dropdown-menu {
+        background-color: #2a3770;
+      }
+
+      .dropdown-menu .dropdown-item {
+        color: #fff;
+      }
+
+      .dropdown-menu .dropdown-item:hover {
+        background-color: #c46242;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+     <!-- Encabezado -->
+     <header id="site-header" class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg px-0 pt-lg-0">
+          <a class="navbar-brand" href="inicio.html"
+            ><span class="fa fa-motor"></span
+            ><strong>Electro Industrial Micabal S.A</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-lg-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="inicio.html"
+                  ><strong>Inicio</strong><span class="sr-only"></span
+                ></a>
+              </li>
+              <li class="nav-item @@nosotros__active">
+                <a class="nav-link" href="nosotros.html"
+                  ><strong>Nosotros</strong></a
+                >
+              </li>
+              <li class="nav-item @@productos__active">
+                <a class="nav-link" href="productos.html"
+                  ><strong>Productos</strong></a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <strong>Servicios</strong>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="motores electricos.html"
+                      >Motores Eléctricos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="sistemas electricos.html"
+                      >Sistemas Eléctricos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="generadores.html"
+                      >Generadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="turbocargadores.html"
+                      >Turbocargadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mecanica industrial.html"
+                      >Mecánica Industrial</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="metalmecanica.html"
+                      >Metalmecánica</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item @@proyectos__active">
+                <a class="nav-link" href="proyectos.html"
+                  ><strong>Proyectos</strong></a
+                >
+              </li>
+              <li class="nav-item @@contacto__active">
+                <a class="nav-link" href="contacto.html"
+                  ><strong>Contacto</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+         
+
+    <!-- Contenido principal -->
+    <header class="header">
+        <h1 class="animate__animated animate__fadeIn">
+          <strong>Motores Eléctricos</strong>
+        </h1>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">
+          Nuestros servicios de reparación de motores AC & DC incluyen rebobinado
+          del motor, mantenimiento, rediseño y pruebas. Tenemos experiencia con
+          motores eléctricos hasta 4.000 HP.
+        </p>
+      </header>
+  
+      <section class="section">
+        <h2 class="animate__animated animate__slideInLeft">
+          <strong>Servicios</strong>
+        </h2>
+        <div class="services-grid">
+          <div class="service-item animate__animated animate__fadeInUp">
+            <div class="img-grid">
+              <img src="https://via.placeholder.com/400x300" alt="Rebobinados" />
+              <img src="https://via.placeholder.com/400x300" alt="Rediseño" />
+            </div>
+            <h3>
+              <strong
+                >Rebobinados, Rediseño, Montaje e Instalación de Motores
+                Eléctricos</strong
+              >
+            </h3>
+            <p>Asesoría Técnica de Diseño y RE-Diseño Electromecánico.</p>
+            <p>Montaje y Mantenimiento Industrial Electromecánico.</p>
+            <p>
+              Rebobinado, Rediseño, Montaje e Instalación de Motores Eléctricos y
+              Generadores de Baja y Media Tensión.
+            </p>
+            <p>Motores Eléctricos de Aplicaciones Especiales.</p>
+            <p>Motores de Bombas de agua.</p>
+            <p>Motores de dos velocidades 1 embobinado.</p>
+            <p>Motores de dos velocidades 2 embobinado.</p>
+            <p>Reparación motores jaula de ardilla.</p>
+            <p>Rebobinado de inducidos y colectores.</p>
+            <p>Rebobinado de Compresores Semiherméticos.</p>
+            <p>Rebobinado de Transformadores Monofásicos y Trifásicos.</p>
+            <p>Reparación de Moto reductores.</p>
+          </div>
+          <div
+            class="service-item animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            <div class="img-grid">
+              <img
+                src="https://via.placeholder.com/400x300"
+                alt="Mantenimiento"
+              />
+              <img src="https://via.placeholder.com/400x300" alt="Correctivo" />
+            </div>
+            <h3>
+              <strong
+                >Servício Integral de Mantenimiento Preventivo -
+                Correctivo</strong
+              >
+            </h3>
+            <p>
+              Mantenimiento Eléctrico en General de Motores, Transformadores y
+              Generadores AC/DC.
+            </p>
+            <p>
+              Mantenimientos Predictivos, Preventivos y Correctivos en Máquinas
+              Eléctricas.
+            </p>
+            <p>Alineación de Motores Eléctricos, Bombas y Generadores.</p>
+            <p>Contratos Integrales de mantenimiento.</p>
+            <p>
+              Lavado de bobinados utilizando solventes eléctricos y máquina de
+              vapor de agua.
+            </p>
+            <p>Horno para el secado de bobinados.</p>
+            <p>Limpieza / Barnizado / Secado / Pruebas.</p>
+            <p>
+              Reparación de núcleos y pruebas de saturación y corto entre chapas.
+            </p>
+          </div>
+          <div
+            class="service-item animate__animated animate__fadeInUp animate__delay-2s"
+          >
+            <div class="img-grid">
+              <img src="https://via.placeholder.com/400x300" alt="Pruebas" />
+              <img src="https://via.placeholder.com/400x300" alt="Aislamiento" />
+            </div>
+            <h3>
+              <strong
+                >Servício de pruebas y análisis de aislamiento para máquinas
+                eléctricas</strong
+              >
+            </h3>
+            <p>
+              Estudio y análisis de aislamiento para maquinas eléctricas rotativas
+              AC/DC y estacionarias.
+            </p>
+            <p>Prueba de nivel de aislamiento.</p>
+            <p>Pruebas de balance de resistencia de bobinado.</p>
+            <p>Prueba índice de polarización.</p>
+            <p>Automatización, Control y Potencia en Procesos Industriales.</p>
+            <p>Prueba de absorción dieléctrica.</p>
+            <p>Pruebas de Hipot, ramp voltage, step voltaje.</p>
+            <p>Prueba de comparación de onda.</p>
+            <p>
+              Estudio y Análisis de Carga, Armónicos, Calidad de energía y
+              corrección del factor de potencia.
+            </p>
+          </div>
+        </div>
+      </section>
+    <!-- Pie de página -->
+    <footer class="footer-29">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29">
+              <strong> Información de Contacto</strong>
+            </h3>
+            <p class="footer-text-29">
+              <strong>Dirección: </strong>Noguchi 1019 y Brasil<br />Ecuador -
+              Guayas - Guayaquil
+            </p>
+            <p class="footer-text-29">
+              <strong>Teléfono: </strong> 454-6290 / 461-3820
+            </p>
+            <p class="footer-text-29">
+              <strong>Email: </strong
+              ><a href="mailto:ventasyservicios@micabal.com">
+                ventasyservicios@micabal.com</a
+              >
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h3 class="footer-title-29"><strong>Enlaces Rápidos</strong></h3>
+            <div class="footer-list-29">
+              <ul>
+                <li>
+                  <a href="inicio.html"><i class="fab fa-inicio"></i> Inicio</a>
+                </li>
+                <li>
+                  <a href="nosotros.html"
+                    ><i class="fab fa-nosotros"></i> Nosotros</a
+                  >
+                </li>
+                <li>
+                  <a href="productos.html"
+                    ><i class="fab fa-productos"></i> Productos</a
+                  >
+                </li>
+                <li>
+                  <a href="servicios.html"
+                    ><i class="fab fa-servicios"></i> Servicios</a
+                  >
+                </li>
+                <li>
+                  <a href="proyectos.html"
+                    ><i class="fab fa-proyectos"></i> Proyectos</a
+                  >
+                </li>
+                <li>
+                  <a href="contacto.html"
+                    ><i class="fab fa-contacto"></i> Contacto</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29"><strong>Mapa del Sitio</strong></h3>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.8691653664673!2d-79.88996112698088!3d-2.2031122373114047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6fbf115153cb%3A0x9255c0e9d9052453!2sELECTRO%20INDUSTRIAL%20MICABAL%20S.A.!5e0!3m2!1ses!2sec!4v1718241512340!5m2!1ses!2sec"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <h3 class="footer-title-29">
+                  <strong>Horarios de Atención</strong>
+                </h3>
+                <p class="footer-text-29">
+                  <strong>Lunes a Viernes:</strong> 8:00 AM - 4:30 PM
+                </p>
+                <p class="footer-text-29">
+                  <strong>Sábados:</strong> 8:00 AM - 12:30 AM
+                </p>
+                <p class="footer-text-29"><strong>Domingos:</strong> Cerrado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-class-29 py-3">
+        <p class="text-center">
+          <strong
+            >© 2024 Electro Industrial Micabal S.A. Todos los derechos
+            reservados</strong
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
